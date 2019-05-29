@@ -1,0 +1,43 @@
+body {
+    background-color:#448aff
+}
+
+.card {
+    position: relative;
+    width: 50%
+}
+
+.center {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.h1-title-style {
+    font-family: 'Roboto';
+    font-weight : 200;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .button {
+      width: inherit;
+    
+  }
