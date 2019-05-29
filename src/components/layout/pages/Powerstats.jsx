@@ -4,11 +4,9 @@ export default class Powerstats extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      powerStats: props.stats
+      powerStats: props.stats,
+      name : props.name
     };
-
-    console.log("const: ")
-    console.log(this.props.stats)
   }
 
   statBuilder = () => {
@@ -26,7 +24,10 @@ export default class Powerstats extends Component {
         );
       }
     }
-    return <div>{sliders}</div>;
+    return <div>
+      <h1 className = "h1-title-style " style = {{fontWeight : 400}}>{this.state.name}</h1>
+    {sliders}
+    </div>;
   };
 
   render() {

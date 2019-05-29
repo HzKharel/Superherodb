@@ -4,18 +4,22 @@ import { Dialog, DialogContent, CardActions, Button } from "@material-ui/core";
 export default function MultiReslutDialog(props) {
   const superheroes = [];
   props.result.tempHeros.map(hero => {
-    let superhero = (
-      <Button
-        key={hero.id}
-        size="small"
-        onClick={() => {
-          props.handle(hero);
-        }}
-      >
-        {hero.biography["full-name"]}
-      </Button>
-    );
-    superheroes.push(superhero);
+
+    if(hero.biography["full-name"].length > 1){
+      let superhero = (
+        <Button
+          key={hero.id}
+          size="small"
+          style = {{marginRight: '5px'}}
+          onClick={() => {
+            props.handle(hero);
+          }}
+        >
+          {hero.biography["full-name"]}
+        </Button>
+      );
+      superheroes.push(superhero);
+    }
     return null;
   });
 

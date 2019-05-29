@@ -6,6 +6,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Powerstats from '../layout/pages/Powerstats'
+import Biography from '../layout/pages/Biography';
+import Appearance from '../layout/pages/Appearance';
+import WorkConnections from '../layout/pages/WorkConnections';
 
 function TabContainer(props) {
   return (
@@ -48,7 +51,6 @@ function NavTabs(props) {
   function handleChange(event, newValue) {
     setValue(newValue);
   }
-
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -57,14 +59,12 @@ function NavTabs(props) {
           <LinkTab label="Biography"/>
           <LinkTab label="Appearance"/>
           <LinkTab label="Work"/>
-          <LinkTab label="Connections"/>
         </Tabs>
       </AppBar>
-      {value === 0 && <TabContainer><Powerstats stats = {props.hero.powerstats} /> </TabContainer>}
-      {value === 1 && <TabContainer>Biography</TabContainer>}
-      {value === 2 && <TabContainer>Appearance</TabContainer>}
-      {value === 3 && <TabContainer>Work</TabContainer>}
-      {value === 4 && <TabContainer>Connections</TabContainer>}
+      {value === 0 && <TabContainer><Powerstats name = {props.hero.name} stats = {props.hero.powerstats} /> </TabContainer>}
+      {value === 1 && <TabContainer><Biography name = {props.hero.name} bio = {props.hero.biography}/></TabContainer>}
+      {value === 2 && <TabContainer><Appearance image = {props.hero.image} name = {props.hero.name} appear = {props.hero.appearance} /></TabContainer>}
+      {value === 3 && <TabContainer><WorkConnections name = {props.hero.name} work = {props.hero.work} connection = {props.hero.connections}/></TabContainer>}
     </div>
   );
 }
